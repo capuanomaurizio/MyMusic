@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyMusic</string>
+    <string-array name="staticivili">
+        <item>POP</item>
+        <item>Rap</item>
+        <item>Classical</item>
+        <item>Indie</item>
+    </string-array>
+</resources>
