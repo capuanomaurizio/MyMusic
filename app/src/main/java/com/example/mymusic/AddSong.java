@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -17,9 +18,12 @@ public class AddSong extends AppCompatActivity {
     Button btnSongsList;
     EditText edtSongName;
     EditText edtSongAuthor;
+    EditText edtSongDuration;
     Spinner spnSongGenre;
     EditText edtPublishDate;
     GestoreBrani gb;
+
+    String[] generi = {"Pop", "Rock", "Reggae", "Rap", "Classica"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +33,18 @@ public class AddSong extends AppCompatActivity {
         btnSongsList = (Button)findViewById(R.id.btnSongsList);
         edtSongName = (EditText)findViewById(R.id.edtSongName);
         edtSongAuthor = (EditText)findViewById(R.id.edtSongAuthor);
+        edtSongDuration = (EditText)findViewById(R.id.edtSongDuration);
         spnSongGenre = (Spinner)findViewById(R.id.spnSongGenre);
         edtPublishDate = (EditText)findViewById(R.id.edtPublishDate);
         gb = new GestoreBrani();
 
+        ArrayAdapter<String> adattatoreGeneri = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, generi);
+        spnSongGenre.setAdapter(adattatoreGeneri);
+
         btnAddSong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Brano b = new Brano(edtSongName.getText().toString(), edtSongAuthor.getText().toString(),
+                Brano b = new Brano(edtSongName.getText().toString(), edtSongAuthor.getText().toString(), edtSongDuration.getText().toString(),
                         spnSongGenre.getSelectedItem().toString(), edtPublishDate.getText().toString());
                 gb.addBrano(b);
                 Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
