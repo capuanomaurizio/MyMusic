@@ -47,7 +47,7 @@ public class AddSong extends AppCompatActivity {
                 Brano b = new Brano(edtSongName.getText().toString(), edtSongAuthor.getText().toString(), edtSongDuration.getText().toString(),
                         spnSongGenre.getSelectedItem().toString(), edtPublishDate.getText().toString());
                 gb.addBrano(b);
-                Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Song added", Toast.LENGTH_SHORT).show();
                 Log.d("brano", b.toString());
             }
         });
@@ -56,7 +56,7 @@ public class AddSong extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), SongsList.class);
-                i.putExtra("gestore", gb);
+                i.putExtra("lista", gb.listBrani());
                 startActivity(i);
             }
         });

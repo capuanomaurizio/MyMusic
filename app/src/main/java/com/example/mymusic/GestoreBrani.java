@@ -15,4 +15,11 @@ public class GestoreBrani implements Serializable {
     public void addBrano(Brano b){
         brani.add(b);
     }
+    public String listBrani(){
+        StringBuilder sb = new StringBuilder();
+        for(Brano b : brani){
+            sb.append(b.toString()+"\n\n");
+        }
+        return sb.toString();
+    }
 }
