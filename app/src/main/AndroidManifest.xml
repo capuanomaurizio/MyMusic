@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMusic">
         <activity
+            android:name=".SongDetails"
+            android:exported="false" />
+        <activity
             android:name=".SongsList"
             android:exported="false" />
         <activity

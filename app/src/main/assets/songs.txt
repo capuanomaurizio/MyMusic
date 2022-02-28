@@ -1,0 +1,4 @@
+Hello;Adele;3:20;POP;2018-10-22
+TikTok;Ke$ha;3:27;POP;2014-08-10
+Womanizer;Britney Spears;3:30;POP;2015-11-20
+Into you;Ariana Grande;3:10;POP;2017-02-01

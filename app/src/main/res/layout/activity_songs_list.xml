@@ -6,28 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".SongsList">
 
-    <TextView
-        android:id="@+id/lblTitle"
-        android:layout_width="458dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="48dp"
-        android:text="My songs:"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/lblSongsList"
-        android:layout_width="453dp"
-        android:layout_height="892dp"
-        android:text="TextView"
-        android:textSize="20sp"
+    <ListView
+        android:id="@+id/lsvwSongs"
+        android:layout_width="536dp"
+        android:layout_height="1026dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTitle"
-        app:layout_constraintVertical_bias="0.527" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
