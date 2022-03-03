@@ -22,7 +22,7 @@
         android:id="@+id/lblDetails"
         android:layout_width="417dp"
         android:layout_height="745dp"
-        android:textSize="48sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -32,13 +32,13 @@
 
     <ImageView
         android:id="@+id/imgImage"
-        android:layout_width="463dp"
-        android:layout_height="128dp"
+        android:layout_width="429dp"
+        android:layout_height="129dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909"
+        app:layout_constraintVertical_bias="0.913"
         app:srcCompat="@android:drawable/bottom_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,6 +29,14 @@ public class SongsManager implements Serializable {
         FileManager fm = new FileManager();
         songs = fm.readFile(fileName, c);
     }
+    public void firstWriting(String fileName, Context c){
+        FileManager fm = new FileManager();
+        fm.firstWriting(fileName, c);
+    }
+    public void writeNewSong(String fileName, String songDetails, Context c){
+        FileManager fm = new FileManager();
+        fm.writeNewSong(fileName, songDetails, c);
+    }
     public String listBrani(){
         //Declaration and instance of the StringBuilder object
         StringBuilder sb = new StringBuilder();

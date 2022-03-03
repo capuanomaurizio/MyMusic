@@ -16,13 +16,12 @@ public class AddSong extends AppCompatActivity {
     //Declaration of graphical elements
     Button btnAddSong;
     Button btnSongsList;
-    Button btnPopulateSongs;
     EditText edtSongName;
     EditText edtSongAuthor;
     EditText edtSongDuration;
     Spinner spnSongGenre;
     EditText edtPublishDate;
-    SongsManager gb;
+    SongsManager sm;
     final String TAG = "AddSong Activity";
 
     //Genres array
@@ -35,15 +34,16 @@ public class AddSong extends AppCompatActivity {
         //Instance of graphical elements
         btnAddSong = (Button)findViewById(R.id.btnAddSong);
         btnSongsList = (Button)findViewById(R.id.btnSongsList);
-        btnPopulateSongs = (Button)findViewById(R.id.btnPopulateSongs);
         edtSongName = (EditText)findViewById(R.id.edtSongName);
         edtSongAuthor = (EditText)findViewById(R.id.edtSongAuthor);
         edtSongDuration = (EditText)findViewById(R.id.edtSongDuration);
         spnSongGenre = (Spinner)findViewById(R.id.spnSongGenre);
         edtPublishDate = (EditText)findViewById(R.id.edtPublishDate);
-        //Instance of the song manager
 
-        gb = new SongsManager();
+        //Instance of the song manager
+        sm = new SongsManager();
+        sm.populateSongs("songs.txt", getApplicationContext());
+        sm.firstWriting("songs.txt", getApplicationContext());
 
         //Creating ArrayAdapter to populate the genres spinner
         ArrayAdapter<String> adattatoreGeneri = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, generi);
@@ -55,7 +55,8 @@ public class AddSong extends AppCompatActivity {
             public void onClick(View v) {
                 Song b = new Song(edtSongName.getText().toString(), edtSongAuthor.getText().toString(), edtSongDuration.getText().toString(),
                         spnSongGenre.getSelectedItem().toString(), edtPublishDate.getText().toString());
-                gb.addBrano(b);
+                sm.addBrano(b);
+                sm.writeNewSong("songs.txt", b.toFileString(), getApplicationContext());
                 //Message toast
                 Toast.makeText(getApplicationContext(), "Song added", Toast.LENGTH_SHORT).show();
                 //Showing the object information in the debug log
@@ -67,15 +68,8 @@ public class AddSong extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), SongsList.class);
-                i.putExtra("manager", gb);
+                i.putExtra("manager", sm);
                 startActivity(i);
-            }
-        });
-
-        btnPopulateSongs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gb.populateSongs("songs.txt", getApplicationContext());
             }
         });
     }

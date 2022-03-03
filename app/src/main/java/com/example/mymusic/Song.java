@@ -37,4 +37,9 @@ public class Song implements Serializable {
         //Concatenation of all the attributes of the object and returning as a String
         return "Song title: "+title+"\n\nAuthor: "+author+"\n\nDuration: "+duration+"\n\nGenre: "+genre+"\n\nPublication date: "+publicationDate.toString();
     }
+
+    public String toFileString(){
+        String string=title+";"+author+";"+duration+";"+genre+";"+publicationDate.toString()+"\n";
+        return string;
+    }
 }
